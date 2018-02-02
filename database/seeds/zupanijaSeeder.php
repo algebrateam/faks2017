@@ -8,7 +8,8 @@ class zupanijaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * php artisan make:seeder zupanijaSeeder
+     * 
      * @return void
      */
     public function run()

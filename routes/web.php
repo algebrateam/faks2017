@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/korisnici', 'usercontroller@getusers');
+Route::get('/s', 'usercontroller@studenti');
 
 Route::get('/neki-blade-test', function () {
     return view('test');

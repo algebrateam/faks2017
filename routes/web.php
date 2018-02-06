@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource("Zupanija","ZupanijaController");
+
 Route::get('/korisnici', 'usercontroller@getusers');
 Route::get('/s', 'usercontroller@studenti');
 

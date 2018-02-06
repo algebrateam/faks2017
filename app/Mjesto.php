@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Zupanija;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -11,5 +12,8 @@ Created Migration: 2018_02_02_192702_create_mjestos_table
  */
 class Mjesto extends Model
 {
-    //
+     public function zupanija()
+    {
+        return $this->belongsTo('App\Zupanija');
+    }
 }

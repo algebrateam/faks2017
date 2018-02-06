@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mjesto;
 use App\Zupanija;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
+use function view;
 
 class ZupanijaController extends Controller
 {
@@ -50,7 +52,17 @@ class ZupanijaController extends Controller
     public function show($id)
     {
            $z= Zupanija::find($id);
-        return view("zupanija.show",['z' => $z]);
+           
+           // Ovo radi ali nije ispravan način, treba napraviti relaciju
+           // belongsTo i HasMany
+           /*
+           $mjestoizzupanije=Mjesto::where('zupanija_id', $z->id)
+               ->orderBy('naziv', 'desc')
+               ->take(100)
+               ->get();
+            */
+           $mjestoizzupanije=$z->mjesta()->get();  
+        return view("zupanija.show",['z' => $z,'m'=>$mjestoizzupanije]);
     }
 
     /**

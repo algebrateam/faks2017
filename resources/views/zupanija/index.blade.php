@@ -3,7 +3,15 @@
 <br>
 
 @foreach ($z as $zupanija)
-<p> <strong>{{ $zupanija->naziv }}</strong><a href="/Zupanija/{{ $zupanija->id }}">link</a></p>
+<p> <strong>{{ $zupanija->naziv }}</strong>
+    <a href="/Zupanija/{{ $zupanija->id }}">detalji</a> 
+    <a href="/Zupanija/{{ $zupanija->id }}/edit">uredi</a>
+<form method="POST" action="/Zupanija/{{ $zupanija->id }}"> 
+    <input type="hidden" name="_method" value="DELETE">
+    {{ csrf_field() }}
+    <input style="display: inline" type="submit" value="obrisi" id='zupanija-del-{{$zupanija->id}}'>
+</form>
+</p>
 @endforeach
 
 <hr>

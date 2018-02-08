@@ -6,6 +6,7 @@ use App\Mjesto;
 use App\Zupanija;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
 use Illuminate\View\View;
 use function view;
 
@@ -18,7 +19,7 @@ class ZupanijaController extends Controller
      */
     public function index()
     {
-         $z= Zupanija::all();
+         $z= Zupanija::all()->reverse();
         return view("zupanija.index",['z' => $z]);
     }
 
@@ -29,7 +30,7 @@ class ZupanijaController extends Controller
      */
     public function create()
     {
-        //
+        return View('zupanija.create');
     }
 
     /**
@@ -40,7 +41,16 @@ class ZupanijaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $zupanija=new Zupanija;
+        $zupanija->naziv=Input::get('naziv');
+        $zupanija->save();
+        
+        
+        //do verzije 5.4
+        //return Redirect::to('Zupanija/create');
+        
+        // od verzije 5.5
+        return redirect()->route('Zupanija.create');
     }
 
     /**
@@ -73,7 +83,9 @@ class ZupanijaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $zupanija=Zupanija::find($id);
+        //dd($zupanija);
+        return View('zupanija.edit')->with('zupanija',$zupanija);
     }
 
     /**
@@ -85,7 +97,10 @@ class ZupanijaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $zupanija=Zupanija::find($id);
+        $zupanija->naziv=Input::get('naziv');
+        $zupanija->save();
+        return redirect()->route('Zupanija.edit', ['id' =>$zupanija->id]);
     }
 
     /**
@@ -96,6 +111,8 @@ class ZupanijaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $zupanija=Zupanija::find($id);
+        $zupanija->delete();
+        return redirect()->route('Zupanija.index');
     }
 }

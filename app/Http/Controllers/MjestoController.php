@@ -14,7 +14,8 @@ class MjestoController extends Controller
      */
     public function index()
     {
-
+         $mjesto= Mjesto::all()->reverse();
+        return view("mjesto.index",compact('mjesto'));
     }
 
     /**

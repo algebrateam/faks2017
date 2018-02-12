@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource("Zupanija","ZupanijaController");
+Route::resource("Mjesto","MjestoController");
 
 Route::get('/korisnici', 'usercontroller@getusers');
 Route::get('/s', 'usercontroller@studenti');

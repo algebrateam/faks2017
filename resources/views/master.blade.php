@@ -7,7 +7,7 @@
     <meta name="author" content="Online 2017">
     <link rel="icon" href="favicon.ico">
 
-    <title>App Name - @yield('title')</title>
+    <title>Fakultet - @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
      <link href="/css/bootstrap.min.css" rel="stylesheet"> 

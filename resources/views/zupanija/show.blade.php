@@ -1,3 +1,7 @@
+@extends('master')
+@section('title', 'kreiraj novu zupaniju')
+@section('content')
+
 <h1>{{ $z->naziv }}</h1>
 
 Datum kreiranja <strong>{{ $z->created_at }}</strong><br>
@@ -11,19 +15,24 @@ Datum kreiranja <strong>{{ $z->created_at }}</strong><br>
     <span style="color:red">U ovoj županiji ne postoje mjesta ili je nepoznata županija</span>
     @else
 
-    @foreach ($m as $mjesto)
-
-    <li>{{$mjesto->naziv}}</li>
-
-    @endforeach
-
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Poštanski broj</th>
+                    <th>Naziv</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($m as $mjesto)
+                <tr>
+                    <td>{{$mjesto->pbr}}</td>
+                    <td>{{$mjesto->naziv}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
     @endif
-<?php
-//dd($z);
-//print_r($z);
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    @endsection
 

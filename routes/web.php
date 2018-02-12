@@ -15,7 +15,8 @@ Route::get('foo', function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+  return view('fakultet');
 });
 
 Route::resource("Zupanija","ZupanijaController");

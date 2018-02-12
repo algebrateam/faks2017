@@ -2,7 +2,8 @@
 @section('title', 'Uredi zupaniju')
 @section('content')
 
-<a href="{{route('Zupanija.index')}}">zupanija</a> <br>
+<a href="{{route('Zupanija.index')}}">Županije</a> <br>
+<a href="{{route('Mjesto.index')}}">Mjesta</a> <br>
 <br>
 <br>
 <div>

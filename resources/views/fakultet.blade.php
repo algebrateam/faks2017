@@ -6,7 +6,7 @@
 <a href="{{route('Mjesto.index')}}">Mjesta</a> <br>
 <br>
 <br>
-<div>
+<div style="box-sizing: border-box">
     <img src="sreca.jpg" width="500px" alt="Opis slike fakultet skacu svi">
         
 </div>

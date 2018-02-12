@@ -2,11 +2,9 @@
 @section('title', 'kreiraj novo mjesto')
 @section('content')
 <h1>Dodaj novo mjesto</h1>
-   @if(Session::has('message'))
-   <div>
-     {{Session::get('message')}}   
-   </div>
-   @endif
+@if (Session::has('message'))
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
 
     
     <div>
@@ -24,8 +22,8 @@
     <input type="text" maxlength="40" value="{{old('naziv')}}" name='naziv' class='form-control'>
   </div>  
      <div>
-    {{ Form::label('naziv','Šifra županije') }}
-    <input type="number" maxlength="10" value="{{old('zupanija_id')}}" name='zupanja_id' class='form-control'>
+    {{ Form::label('zupanija_id','Šifra županije') }}
+    <input type="number" maxlength="10" value="{{old('zupanija_id')}}" name='zupanija_id' class='form-control'>
   </div>   
   {{ Form::submit('Dodaj novo mjesto', array('class'=>'btn btn-primary', 'id'=>'mjesto-dodaj'))}}
 </div>

@@ -23,10 +23,10 @@
 <tr>
     <td>{{ $m->id }}</td>
     <td>{{ $m->naziv }}</td>
-    <td><a href="/Zupanija/{{ $m->id }}">detalji</a></td>
-    <td><a href="/Zupanija/{{ $m->id }}/edit">uredi</a></td>
+    <td><a href="/Mjesto/{{ $m->id }}">detalji</a></td>
+    <td><a href="/Mjesto/{{ $m->id }}/edit">uredi</a></td>
     <td>
-        <form method="POST" action="/Zupanija/{{ $m->id }}"> 
+        <form method="POST" action="/Mjesto/{{ $m->id }}"> 
             <input type="hidden" name="_method" value="DELETE">
             {{ csrf_field() }}
 <input style="display: inline" type="submit" value="obrisi" id='mjesto-del-{{$m->id}}'>

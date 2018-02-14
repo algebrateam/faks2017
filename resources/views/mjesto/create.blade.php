@@ -3,18 +3,7 @@
 @section('content')
 <h1>Dodaj novo mjesto</h1>
 
-@if (Session::has('message'))
-<div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
-@if ($errors->any())
-<div class="alert alert-danger text-center msg">
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li><strong>{{ $error }}</strong></li>
-        @endforeach
-    </ul>
-</div>
-@endif
+
 
 <div>
     {{ Form::open(array('url'=>'Mjesto')) }}
@@ -30,10 +19,10 @@
         @endif
     </div>
 
-    <div class="input-group">
-        {{ Form::label('naziv','Naziv mjesta') }} 
+    <div>
+        {{ Form::label('naziv','Naziv mjesta') }} <br>
 
-        <input type="text" maxlength="40" value="{{old('naziv')}}" name='naziv' class='form-control'><span class="input-group-addon"><i class="fa fa-map" style="font-size:30px;color:#333333;"></i></span>
+        <input type="text" maxlength="40" value="{{old('naziv')}}" name='naziv' class='form-control'>
 
     </div>
     <div>
@@ -42,7 +31,17 @@
     </div>  
     <div>
         {{ Form::label('zupanija_id','Šifra županije') }} 
-        <input type="number" maxlength="10" value="{{old('zupanija_id')}}" name='zupanija_id' class='form-control'>
+        <!--
+        <input type="number" maxlength="10" value="{{old('zupanija_id')}}" name='zupanija_id' class='form-control'>  -->
+        
+<select name='zupanija_id' class='form-control'>
+  @if(old('zupanija_id')!='') 
+  <option value="{{old('zupanija_id')}}">{{$zupanija[old('zupanija_id')-1]->naziv}}</option>
+  @endif
+  @foreach ($zupanija as $z)
+  <option value="{{$z->id}}">{{$z->naziv}}</option>
+  @endforeach
+</select>
     </div> 
     <button type="submit" class="btn btn-default" id='mjesto-dodaj'>
         Dodaj novo mjesto &nbsp;&nbsp; <i class="fa fa-arrow-right" style="font-size:30px;color:#333333;"></i> 

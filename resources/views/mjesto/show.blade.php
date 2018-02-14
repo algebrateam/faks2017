@@ -1,38 +1,28 @@
 @extends('master')
-@section('title', 'kreiraj novu zupaniju')
+@section('title', 'Mjesto detalji')
 @section('content')
 
-<h1>{{ $z->naziv }}</h1>
+<h1>{{ $mjesto->naziv }}</h1>
 
-Datum kreiranja <strong>{{ $z->created_at }}</strong><br>
-Šifra županije <strong>{{ $z->id }}</strong><br>
+Datum kreiranja <strong>{{ $mjesto->created_at }}</strong><br>
+Šifra mjesta <strong>{{ $mjesto->id }}</strong><br>
+
+<?php 
+$z = DB::table('zupanijas')->find($mjesto->zupanija_id);
+?>
+<br>
+<!-- Ovo je ručno izrudareno  -->
+<i>Ovo je ručno izrudareno</i><br>
+Ovo mjesto pripada  <strong> {{ $z->naziv }} </strong> županiji.
+<br>
+<br>
+<i>Ovo je ispravan nacin</i><br>
+<!-- Ovo je ispravan nacin  -->
+Ovo mjesto pripada  <strong> {{ $mjesto->zupanija->naziv }} </strong> županiji.
+
+
 
 <br>
 <hr>
-<h3>U ovoj županiji su sljedeća mjesta</h3>
-<ol>
-    @if (count($m) === 0)
-    <span style="color:red">U ovoj županiji ne postoje mjesta ili je nepoznata županija</span>
-    @else
-
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-            <thead>
-                <tr>
-                    <th>Poštanski broj</th>
-                    <th>Naziv</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($m as $mjesto)
-                <tr>
-                    <td>{{$mjesto->pbr}}</td>
-                    <td>{{$mjesto->naziv}}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    @endif
-    @endsection
+@endsection
 

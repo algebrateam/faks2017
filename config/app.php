@@ -195,6 +195,8 @@ return [
       // Ovo su naši custom aliasi
       'Form' => Collective\Html\FormFacade::class,
       'Html' => Collective\Html\HtmlFacade::class,
+      'Input'=> Illuminate\Support\Facades\Input::class,
+      // kraj custom aliasa
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

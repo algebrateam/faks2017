@@ -16,3 +16,7 @@ php artisan make:controller MjestoController --resource
 php artisan route:list
 php artisan make:migration add_foreign_key_to_mjesto
 php artisan migrate:refresh --seed
+
+Ručno pokrenuti PHPUNIT:
+C:\Users\pmrvic\Code\fakultet\vendor\bin\phpunit.bat --configuration "C:\Users\pmr
+vic\Code\faks2017\phpunit.xml" -- "C:\Users\pmrvic\Code\fakultet\tests"

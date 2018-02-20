@@ -7,31 +7,42 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+
 /**
  * @abstract Ovim testom ćemo pokušati pokriti cijelu konfiguraciju postavki za naš projekt Fakultet
  * 
  * @author pmrvic
  * @copyright (c) 2018, Predrag Mrvic
+ * @example C:\xampp\php\php.exe C:\Users\pmrvic\Code\fakultet\vendor\phpunit\phpunit.phar --configuration "C:\Users\pmrvic\Code\faks2017\phpunit.xml"
  */
 class ConfigFakultetTest extends TestCase{
-    public function testNajmanjaVerzijaLaravela($najmanjaverzija="5.3.0"){
-        
-        $najmanjaverzija=str_replace(".","",$najmanjaverzija);
-        $ver=str_replace(".","",app()::VERSION);
+    public function testNajmanjaVerzijaLaravela($najmanjaverzija="5.5.0"){
+        $temp0=explode(".",$najmanjaverzija);  // 6.3.33  6.3.33  6.3.33
+        $temp1=explode(".",app()::VERSION);    // 5.5.33  6.2.0  7.2.0
+        //$najmanjaverzija=str_replace(".","",$najmanjaverzija);
+        //$ver=str_replace(".","",app()::VERSION);
 
-        $this->assertGreaterThanOrEqual((int)$najmanjaverzija, (int)$ver);
+        $this->assertGreaterThanOrEqual((int)$temp0[0], (int)$temp1[0],"glavna verzija je manja od trazene!");
+        if ($temp1[0]==$temp1[0]){
+          $this->assertGreaterThanOrEqual((int)$temp0[1], (int)$temp1[1],"sekundarna verzija je niza od trazene");
+        }
+         if ($temp1[0]>=$temp1[0]){
+          $this->assertGreaterThanOrEqual((int)$temp0[1], (int)$temp1[1]);
+        }      
+        
     }
     public function testAppKeyPostavljen()
     {
+      //Config::get('app.key')  moze i ovako
         $this->assertNotEmpty($_ENV['APP_KEY']
-                ,'Ključ nije generiran. Pokreni "php artisan key:generate"');
+                ,'Kljuc nije generiran. Pokreni "php artisan key:generate"');
         
         $this->assertEquals ("base64"
                 ,substr($_ENV['APP_KEY'], 0, 6)
-                ,'Ključ nije ispravan, mora počinjati sa "base64"');
+                ,'Kljuc nije ispravan, mora pocinjati sa "base64"');
        
         $this->assertEquals (51,strlen($_ENV['APP_KEY'])
-                ,'Ključ nije dovoljne duljine, mora imati 70 znakova');
+                ,'Kljuc nije dovoljne duljine, mora imati 51 znak');
                 
     }
     

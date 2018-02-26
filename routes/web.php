@@ -15,9 +15,29 @@ Route::get('foo', function () {
 });
 
 Route::get('/', function () {
-    //return view('welcome');
-  return view('fakultet');
+    return view('fakultet');
 });
+
+
+/**
+ * Ovo su rute za ZYRO template
+ */
+
+Route::get('Home',function(){
+  return Redirect::to('/zyro/1.php');})->name('Home');
+Route::get('Popular',function(){
+  return Redirect::to('/zyro/4.php');})->name('Popular');
+Route::get('Humour',function(){
+  return Redirect::to('/zyro/5.php');})->name('Humour');
+Route::get('Movies',function(){
+  return Redirect::to('/zyro/2.php');})->name('Movies');
+Route::get('Contacts',function(){
+  return Redirect::to('/zyro/3.php');})->name('Contacts');
+// Ova ruta pokriva sve gornje ako se ide u poddirektorij 'zyro'
+Route::get('/zyro/{url}', function ($url) {
+  return redirect()->route($url);  
+});
+
 
 Route::resource("Zupanija","ZupanijaController");
 Route::resource("Mjesto","MjestoController");

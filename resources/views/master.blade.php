@@ -215,8 +215,8 @@ feather.replace()
      
   $(document).ready(function() {
   $('li.active').removeClass('active');
-   alert("cc");
-  $('a[href="' + location.pathname + '"]').closest('li').addClass('active'); 
+  //$('a[href="' + location.pathname + '"]').closest('li').addClass('active');
+  $('a[href="' + location.pathname + '"]').addClass('active'); 
 });
     </script>
   </body>

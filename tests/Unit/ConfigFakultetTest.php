@@ -16,6 +16,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
  * @example C:\xampp\php\php.exe C:\Users\pmrvic\Code\fakultet\vendor\phpunit\phpunit.phar --configuration "C:\Users\pmrvic\Code\faks2017\phpunit.xml"
  */
 class ConfigFakultetTest extends TestCase{
+  //Laravel's versioning scheme maintains the following convention: paradigm.major.minor
     public function testNajmanjaVerzijaLaravela($najmanjaverzija="5.5.0"){
         $temp0=explode(".",$najmanjaverzija);  // 6.3.33  6.3.33  6.3.33
         $temp1=explode(".",app()::VERSION);    // 5.5.33  6.2.0  7.2.0

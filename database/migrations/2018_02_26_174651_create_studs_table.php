@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Faker\Generator as Faker;
 
 class CreateStudsTable extends Migration
 { 
@@ -14,7 +13,6 @@ class CreateStudsTable extends Migration
      */
     public function up()
     {
-     $faker = Faker\Factory::create();
         Schema::create('studs', function (Blueprint $table) {
             $table->increments('id');
             $table->char('imestud',40);

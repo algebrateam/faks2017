@@ -26,7 +26,10 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+//TODO: promjeni default stranicu nakon logiranja
+    
+    
+    
     /**
      * Create a new controller instance.
      *

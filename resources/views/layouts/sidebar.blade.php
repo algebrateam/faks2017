@@ -9,10 +9,15 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ route('Zupanija.index') }}">
         <span data-feather="file"></span>
-        Županija
+        Županije
       </a>
     </li>
-
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('Mjesto.index') }}">
+        <span data-feather="map-pin"></span>
+        Mjesta
+      </a>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="#">
         <span data-feather="shopping-cart"></span>

@@ -38,9 +38,16 @@ Route::get('/zyro/{url}', function ($url) {
   return redirect()->route($url);  
 });
 
+// Može ovako:
+//  Route::resource("Zupanija","ZupanijaController")->middleware('auth');
+//  Route::resource("Mjesto","MjestoController")->middleware('auth');
 
-Route::resource("Zupanija","ZupanijaController");
-Route::resource("Mjesto","MjestoController");
+// Može i ovako: 
+Route::group(['middleware'=>['auth']],function(){
+   Route::resource("Zupanija","ZupanijaController");
+  Route::resource("Mjesto","MjestoController");
+});
+
 
 Route::get('/korisnici', 'usercontroller@getusers');
 Route::get('/s', 'usercontroller@studenti');
@@ -48,3 +55,7 @@ Route::get('/s', 'usercontroller@studenti');
 Route::get('/neki-blade-test', function () {
     return view('test');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

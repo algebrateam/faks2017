@@ -1,0 +1,45 @@
++--------+-----------+-------------------------------+-----------------------+------------------------------------------------------------------------+----------------------------------------------+
+| Domain | Method    | URI                           | Name                  | Action                                                                 | Middleware                                   |
++--------+-----------+-------------------------------+-----------------------+------------------------------------------------------------------------+----------------------------------------------+
+|        | GET|HEAD  | /                             |                       | Closure                                                                | web                                          |
+|        | GET|HEAD  | Contacts                      | Contacts              | Closure                                                                | web                                          |
+|        | GET|HEAD  | Home                          | Home                  | Closure                                                                | web                                          |
+|        | GET|HEAD  | Humour                        | Humour                | Closure                                                                | web                                          |
+|        | GET|HEAD  | Mjesto                        | Mjesto.index          | App\Http\Controllers\MjestoController@index                            | web                                          |
+|        | POST      | Mjesto                        | Mjesto.store          | App\Http\Controllers\MjestoController@store                            | web                                          |
+|        | GET|HEAD  | Mjesto/create                 | Mjesto.create         | App\Http\Controllers\MjestoController@create                           | web                                          |
+|        | PUT|PATCH | Mjesto/{Mjesto}               | Mjesto.update         | App\Http\Controllers\MjestoController@update                           | web                                          |
+|        | DELETE    | Mjesto/{Mjesto}               | Mjesto.destroy        | App\Http\Controllers\MjestoController@destroy                          | web                                          |
+|        | GET|HEAD  | Mjesto/{Mjesto}               | Mjesto.show           | App\Http\Controllers\MjestoController@show                             | web                                          |
+|        | GET|HEAD  | Mjesto/{Mjesto}/edit          | Mjesto.edit           | App\Http\Controllers\MjestoController@edit                             | web                                          |
+|        | GET|HEAD  | Movies                        | Movies                | Closure                                                                | web                                          |
+|        | GET|HEAD  | Popular                       | Popular               | Closure                                                                | web                                          |
+|        | POST      | Zupanija                      | Zupanija.store        | App\Http\Controllers\ZupanijaController@store                          | web                                          |
+|        | GET|HEAD  | Zupanija                      | Zupanija.index        | App\Http\Controllers\ZupanijaController@index                          | web                                          |
+|        | GET|HEAD  | Zupanija/create               | Zupanija.create       | App\Http\Controllers\ZupanijaController@create                         | web                                          |
+|        | GET|HEAD  | Zupanija/{Zupanija}           | Zupanija.show         | App\Http\Controllers\ZupanijaController@show                           | web                                          |
+|        | PUT|PATCH | Zupanija/{Zupanija}           | Zupanija.update       | App\Http\Controllers\ZupanijaController@update                         | web                                          |
+|        | DELETE    | Zupanija/{Zupanija}           | Zupanija.destroy      | App\Http\Controllers\ZupanijaController@destroy                        | web                                          |
+|        | GET|HEAD  | Zupanija/{Zupanija}/edit      | Zupanija.edit         | App\Http\Controllers\ZupanijaController@edit                           | web                                          |
+|        | GET|HEAD  | _debugbar/assets/javascript   | debugbar.assets.js    | Barryvdh\Debugbar\Controllers\AssetController@js                       | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | _debugbar/assets/stylesheets  | debugbar.assets.css   | Barryvdh\Debugbar\Controllers\AssetController@css                      | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | DELETE    | _debugbar/cache/{key}/{tags?} | debugbar.cache.delete | Barryvdh\Debugbar\Controllers\CacheController@delete                   | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | _debugbar/clockwork/{id}      | debugbar.clockwork    | Barryvdh\Debugbar\Controllers\OpenHandlerController@clockwork          | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | _debugbar/open                | debugbar.openhandler  | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle             | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | api/user                      |                       | Closure                                                                | api,auth:api                                 |
+|        | GET|HEAD  | foo                           |                       | Closure                                                                | web                                          |
+|        | GET|HEAD  | home                          | home                  | App\Http\Controllers\HomeController@index                              | web,auth                                     |
+|        | GET|HEAD  | korisnici                     |                       | App\Http\Controllers\usercontroller@getusers                           | web                                          |
+|        | GET|HEAD  | login                         | login                 | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest                                    |
+|        | POST      | login                         |                       | App\Http\Controllers\Auth\LoginController@login                        | web,guest                                    |
+|        | POST      | logout                        | logout                | App\Http\Controllers\Auth\LoginController@logout                       | web                                          |
+|        | GET|HEAD  | neki-blade-test               |                       | Closure                                                                | web                                          |
+|        | POST      | password/email                | password.email        | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest                                    |
+|        | GET|HEAD  | password/reset                | password.request      | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest                                    |
+|        | POST      | password/reset                |                       | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest                                    |
+|        | GET|HEAD  | password/reset/{token}        | password.reset        | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest                                    |
+|        | GET|HEAD  | register                      | register              | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest                                    |
+|        | POST      | register                      |                       | App\Http\Controllers\Auth\RegisterController@register                  | web,guest                                    |
+|        | GET|HEAD  | s                             |                       | App\Http\Controllers\usercontroller@studenti                           | web                                          |
+|        | GET|HEAD  | zyro/{url}                    |                       | Closure                                                                | web                                          |
++--------+-----------+-------------------------------+-----------------------+------------------------------------------------------------------------+----------------------------------------------+

@@ -139,6 +139,7 @@ return [
     'providers' => [
         // ovo su naši custom provideri
         Collective\Html\HtmlServiceProvider::class,
+        Laravel\Dusk\DuskServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */

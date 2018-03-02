@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests;
-
+use Faker\Generator as Faker;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -20,6 +20,17 @@ abstract class DuskTestCase extends BaseTestCase
     public static function prepare()
     {
         static::startChromeDriver();
+        //
+        /*
+        $admin = new \App\User();
+        $admin->name=Faker\Generator::firstName();
+        $admin->email="mrvic.predrag@gmail.com";
+        $admin->password="$2y$10$kp6nQd6hpVIn5jlEsqE3Nu4h/qXcIoMqAVMgRkY8b7vFQrX1W22pS";
+        $admin->remember_token="lffKnNxJw7UUk62vhBg5MrV6Bg6lysu2ug2XlqVyDbeQbhvlw8W3UPG6GwWy";
+        $admin->save();
+      */
+        factory(App\User::class, 1)->create();
+        
     }
 
     /**

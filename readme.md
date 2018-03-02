@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/algebrateam/faks2017.svg?branch=master)](https://travis-ci.org/algebrateam/faks2017)
+https://travis-ci.org/algebrateam/faks2017
+
 https://www.000webhost.com/members/website/faks2017/build
 
 https://files.000webhost.com/

@@ -1,9 +1,8 @@
 <?php
 
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+//use Illuminate\Foundation\Auth\User as Authenticatable;
 
 //factory(App\User::class, 1)->create();
 class User extends \TCG\Voyager\Models\User

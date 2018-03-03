@@ -12,7 +12,6 @@ Created Migration: 2018_02_02_192702_create_mjestos_table
  */
 class Mjesto extends Model
 {
-  
   protected $fillable=['pbr','naziv','zupanija_id','created_at','updated_at'];
   
      public function zupanija()

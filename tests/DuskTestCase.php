@@ -32,7 +32,11 @@ abstract class DuskTestCase extends BaseTestCase
         $admin->remember_token="lffKnNxJw7UUk62vhBg5MrV6Bg6lysu2ug2XlqVyDbeQbhvlw8W3UPG6GwWy";
         $admin->save();
       */
-      //  factory(User::class, 1)->create();
+        
+        if(User::find(1)==null){
+        factory(User::class, 1)->create();
+        factory(User::class, 1)->create();
+        }
         
     }
 

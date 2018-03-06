@@ -1,11 +1,14 @@
 <?php
 
 namespace Tests;
+
+use App\User;
+use Facebook\WebDriver\Chrome\ChromeOptions;
+use Facebook\WebDriver\Remote\DesiredCapabilities;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Faker\Generator as Faker;
 use Laravel\Dusk\TestCase as BaseTestCase;
-use Facebook\WebDriver\Chrome\ChromeOptions;
-use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Facebook\WebDriver\Remote\DesiredCapabilities;
+use function factory;
 
 abstract class DuskTestCase extends BaseTestCase
 {
@@ -29,14 +32,14 @@ abstract class DuskTestCase extends BaseTestCase
         $admin->remember_token="lffKnNxJw7UUk62vhBg5MrV6Bg6lysu2ug2XlqVyDbeQbhvlw8W3UPG6GwWy";
         $admin->save();
       */
-        factory(App\User::class, 1)->create();
+      //  factory(User::class, 1)->create();
         
     }
 
     /**
      * Create the RemoteWebDriver instance.
      *
-     * @return \Facebook\WebDriver\Remote\RemoteWebDriver
+     * @return RemoteWebDriver
      */
     protected function driver()
     {

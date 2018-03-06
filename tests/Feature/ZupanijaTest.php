@@ -62,6 +62,12 @@ class ZupanijaTest extends TestCase
        $zz=$z->find(2)->mjesta()->find(7)->naziv;
        $this->assertEquals($zz,"Gornji Stupnik");
     }
+    // Ovo je radilo do nismo uključili
+    // php artisan make:auth
+    // sada ne možemo ditektno na stranicu 
+    // već moramo proći proces autentikacije
+    
+    
     public function testStranicaZupanija() {
       $response = $this->get('/Zupanija/22');
         $response->assertStatus(200);
@@ -69,4 +75,6 @@ class ZupanijaTest extends TestCase
         $response->assertSee('Grad Zagreb');
       
     }
+     
+     
 }

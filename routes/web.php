@@ -44,9 +44,19 @@ Route::get('/zyro/{url}', function ($url) {
 
 // Može i ovako: 
 Route::group(['middleware'=>['auth']],function(){
-   Route::resource("Zupanija","ZupanijaController");
+  Route::resource("Zupanija","ZupanijaController");
   Route::resource("Mjesto","MjestoController");
 });
+Route::get('Zupanija/{Zupanija}', ['middleware' => 'web', 'uses' => 'ZupanijaController@show']);
+
+//  php artisan route:list --name=Zupa
+//TODO treba izdvojiti prikaz svih zupanija iz indexa
+//Route::get('Zupanija', ['middleware' => 'web', 'uses' => 'ZupanijaController@index']);
+//Route::get('Zupanija', ['middleware' => 'web', 'uses' => 'ZupanijaController@index']);
+//Route::get('/Zupanija', 'ZupanijaController@index')->name('zupanija.index');
+
+
+
 
 
 Route::get('/korisnici', 'usercontroller@getusers');

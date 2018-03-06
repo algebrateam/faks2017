@@ -33,9 +33,12 @@ abstract class DuskTestCase extends BaseTestCase
         $admin->save();
       */
         
-        if(User::find(1)==null){
+        if(User::find(1)->name!=null){
+        
         factory(User::class, 1)->create();
         factory(User::class, 1)->create();
+        
+        
         }
         
     }

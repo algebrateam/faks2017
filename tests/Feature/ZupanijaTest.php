@@ -53,7 +53,7 @@ class ZupanijaTest extends TestCase
       //TODO provjeri da ova tri člana polja postoje u bazi Zupanija
     }
     public function zupanijaids() {
-      return ['Varaždinska1','Ličko-senjska','Bjelovarsko-bilogorska'];
+      return ['Varaždinska','Ličko-senjska','Bjelovarsko-bilogorska'];
       
     }
     

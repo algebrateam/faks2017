@@ -15,7 +15,9 @@ class ExampleTest extends DuskTestCase
      */
     public function testBasicExample()
     {
-        $this->browse(function (Browser $browser) {
+       
+      $user= App\User::find(3);
+      $this->browse(function (Browser $browser) use ($user) {
             $browser->visit('/')
                     ->assertSee('Fakultet');
         });
